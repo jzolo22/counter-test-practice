@@ -27,7 +27,8 @@ test("allows user to decrement counter", () => {
   const { getByText, getByTestId } = render(<App />)
 
   fireEvent.click(getByText("Click me to Decrement"))
-  getByText(-1)
+  fireEvent.click(getByText("Click me to Decrement"))
+  getByText(-2)
 
 })
 
