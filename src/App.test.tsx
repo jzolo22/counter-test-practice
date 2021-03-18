@@ -3,12 +3,7 @@ import App from './App';
 // import { render } from '@testing-library/dom'
 
 test('renders the correct content', () => {
-  // render(<App />);
-  // const linkElement = screen.getByText(/learn react/i);
-  // expect(linkElement).toBeInTheDocument();
-  // const root = document.createElement("div")
-  // ReactDOM.render(<App />, root)
-  
+
   const { getByText, getByLabelText } = render(<App />)
 
   getByText("Counter") // same as line below
@@ -16,7 +11,7 @@ test('renders the correct content', () => {
 });
 
 test("allows user to increment counter", () => {
-  const { getByText, getByTestId } = render(<App />)
+  const { getByText } = render(<App />)
 
   fireEvent.click(getByText("Click me to Increment"))
   getByText(1)
@@ -24,7 +19,7 @@ test("allows user to increment counter", () => {
 })
 
 test("allows user to decrement counter", () => {
-  const { getByText, getByTestId } = render(<App />)
+  const { getByText } = render(<App />)
 
   fireEvent.click(getByText("Click me to Decrement"))
   fireEvent.click(getByText("Click me to Decrement"))
@@ -33,7 +28,7 @@ test("allows user to decrement counter", () => {
 })
 
 test("allows user to reset counter", () => {
-  const { getByText, getByTestId } = render(<App />)
+  const { getByText } = render(<App />)
 
   fireEvent.click(getByText("Click me to Reset"))
   getByText(0)
